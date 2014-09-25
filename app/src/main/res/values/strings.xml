@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+<<<<<<< HEAD
     <string name="app_name">Tasker</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_tela__minhas_atividades">tela_MinhasAtividades</string>
     <string name="title_activity_atividade">Atividade</string>
     <string name="title_activity_novo_tempo">NovoTempo</string>
+=======
+    <string name="app_name">Taskers</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_atividades">Atividades</string>
+    <string name="hello_world">Hello world!</string>
+>>>>>>> 82e807bd8957266324de93b2507b099c320d7fbc
 
 </resources>

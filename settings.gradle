@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 include ':app'
+=======
+include ':app', ':app2'
+>>>>>>> 82e807bd8957266324de93b2507b099c320d7fbc

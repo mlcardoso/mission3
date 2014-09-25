@@ -5,13 +5,9 @@ android {
     buildToolsVersion "20.0.0"
 
     defaultConfig {
-<<<<<<< HEAD
-        applicationId "com.example.marcoscardoso.tasker"
-=======
-        applicationId "com.example.ipbfiladelfia.taskers"
->>>>>>> 82e807bd8957266324de93b2507b099c320d7fbc
-        minSdkVersion 15
-        targetSdkVersion 20
+        applicationId "com.example.mymodule.app2"
+        minSdkVersion 14
+        targetSdkVersion 14
         versionCode 1
         versionName "1.0"
     }
@@ -25,9 +21,5 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-<<<<<<< HEAD
-=======
-    compile 'com.android.support:support-v4:20.0.0'
     compile 'com.android.support:support-v13:20.0.0'
->>>>>>> 82e807bd8957266324de93b2507b099c320d7fbc
 }

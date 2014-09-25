@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="C:\Users\IPB Filadelfia\AndroidStudioProjects\Taskers2\app\build\intermediates\pre-dexed\debug\support-annotations-20.0.0-20935acc08c4c8a223678a5e224283d3ea7ddce9.jar"
+        jar="C:\Users\IPB Filadelfia\AppData\Local\Android\android-studio\sdk\extras\android\m2repository\com\android\support\support-annotations\20.0.0\support-annotations-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa"/>
+    <item
+        dex="C:\Users\IPB Filadelfia\AndroidStudioProjects\Taskers2\app\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-3e4cbe547d3a3d239a80787667de6ebd96a03307.jar"
+        jar="C:\Users\IPB Filadelfia\AndroidStudioProjects\Taskers2\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\libs\internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d"/>
+    <item
+        dex="C:\Users\IPB Filadelfia\AndroidStudioProjects\Taskers2\app2\build\intermediates\pre-dexed\debug\classes-4c813c6a1a2a9f53629d5ce60b92e1f2de8e5346.jar"
+        jar="C:\Users\IPB Filadelfia\AndroidStudioProjects\Taskers2\app2\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="8694693636ab36910c8100ce527c258ff3ebece0"/>
+    <item
+        dex="C:\Users\IPB Filadelfia\AndroidStudioProjects\Taskers2\app2\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-d4d03106994d737e2386cb3a84567a619fbee96f.jar"
+        jar="C:\Users\IPB Filadelfia\AndroidStudioProjects\Taskers2\app2\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\libs\internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d"/>
+    <item
+        dex="C:\Users\IPB Filadelfia\AndroidStudioProjects\Taskers2\app\build\intermediates\pre-dexed\debug\classes-faf480b5776cb090728aa51ff94b5a19fb32d1b4.jar"
+        jar="C:\Users\IPB Filadelfia\AndroidStudioProjects\Taskers2\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="8694693636ab36910c8100ce527c258ff3ebece0"/>
+    <item
+        dex="C:\Users\IPB Filadelfia\AndroidStudioProjects\Taskers2\app2\build\intermediates\pre-dexed\debug\classes-86b3981159289bd5b12924b03cb0d9d4cb6f0a5f.jar"
+        jar="C:\Users\IPB Filadelfia\AndroidStudioProjects\Taskers2\app2\build\intermediates\exploded-aar\com.android.support\support-v13\20.0.0\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="e128103d5281ddd26195a7f980b36d0d005a4e56"/>
+    <item
+        dex="C:\Users\IPB Filadelfia\AndroidStudioProjects\Taskers2\app2\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-68d1092382499177920be3d2d1ccd685e4581daf.jar"
+        jar="C:\Users\IPB Filadelfia\AndroidStudioProjects\Taskers2\app2\build\intermediates\exploded-aar\com.android.support\support-v13\20.0.0\libs\internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="27bbd3982cdfe4468a9bf99c8c773734a9049e33"/>
+
+</pre-dex-items>
