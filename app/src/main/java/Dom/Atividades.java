@@ -1,5 +1,7 @@
 package Dom;
 
+import android.util.DisplayMetrics;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,7 +10,7 @@ import java.util.List;
  */
 public class Atividades {
 
-    private ArrayList<Atividade> ListaAtividade = new ArrayList<Atividade>();
+    public ArrayList<Atividade> ListaAtividade = new ArrayList<Atividade>();
     private ArrayList<String> NomeMaisTempo = new ArrayList<String>();
 
 
@@ -18,6 +20,20 @@ public class Atividades {
 
     public Atividade getAtividadeForId(int i) {
         return ListaAtividade.get(i);
+    }
+
+
+    public int RemoveAtividade(String Nome) {
+
+        for (int i = 0; i < ListaAtividade.size(); i++) {
+
+            if (ListaAtividade.get(i).getNome().toString().equals(Nome)) {
+                ListaAtividade.remove(i);
+                return 0;
+            }
+        }
+        return 1;
+
     }
 
     public int insereAtividade(String Nome) {
@@ -68,6 +84,8 @@ public class Atividades {
             ListaAtividade.add(a);
         }
         return 1;
+
+
     }
 
     public ArrayList<String> retornaNomeMaisTempo() {

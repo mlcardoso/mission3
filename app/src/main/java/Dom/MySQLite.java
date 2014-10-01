@@ -1,9 +1,5 @@
 package Dom;
 
-/**
- * Created by Marcos Cardoso on 26/09/2014.
- */
-
         import java.util.ArrayList;
         import java.util.List;
 
@@ -16,7 +12,7 @@ package Dom;
 public class MySQLite {
 
     // Database Name
-    private static final String DATABASE_NAME = "Tasker.db";
+    private static final String DATABASE_NAME = "Activities.db";
 
     /*TALBES NAMES*/
     private static final String TABLE_NAME = "MyList";
@@ -48,16 +44,24 @@ public class MySQLite {
         // TODO Auto-generated constructor stub
     }
 
-    public long insert(String name,String date, String time) {
-        this.insertStmt.bindString(1, name);
-        this.insertStmt.bindString(2, date);
-        this.insertStmt.bindString(3, time);
+    public long insert(String name,String date, Integer time) {
+        if(date==null && time==null){
+            this.insertStmt.bindString(1, name);
+            this.insertStmt.bindNull(2);
+            this.insertStmt.bindNull(3);
+        }
+        else{
+            this.insertStmt.bindString(1, name);
+            this.insertStmt.bindString(2, date);
+            this.insertStmt.bindLong(3, time);
+        }
         return this.insertStmt.executeInsert();
     }
     public void deleteAll() {
         this.db.delete(TABLE_NAME, null, null);
     }
 
+    /* Selects */
     public List<String> selectAllNames() {
         List<String> list = new ArrayList<String>();
         Cursor cursor = this.db.rawQuery("SELECT DISTINCT "+ name+" from "+TABLE_NAME, null);
@@ -74,7 +78,8 @@ public class MySQLite {
 
     public List<String> SelectAllDate(String name){
         List<String> list = new ArrayList<String>();
-        Cursor cursor = this.db.rawQuery("SELECT "+ date+" from "+TABLE_NAME+" where name="+"'"+name+"'", null);
+        Cursor cursor = this.db.rawQuery("SELECT "+ date+" from "+TABLE_NAME+" where name="+"'"+name+"' and "
+                +date+" is not null and "+time+" is not null", null);
         if(cursor.moveToFirst()) {
             do {
                 list.add(cursor.getString(0));
@@ -85,12 +90,13 @@ public class MySQLite {
         }
         return list;
     }
-    public List<String> SelectAllTime(String name){
-        List<String> list = new ArrayList<String>();
-        Cursor cursor = this.db.rawQuery("SELECT "+ time+" from "+TABLE_NAME+" where name="+"'"+name+"'", null);
+    public List<Integer> SelectAllTime(String name){
+        List<Integer> list = new ArrayList<Integer>();
+        Cursor cursor = this.db.rawQuery("SELECT "+ time+" from "+TABLE_NAME+" where name="+"'"+name+"' AND "
+                +time+" IS NOT NULL AND "+date+" IS NOT NULL", null);
         if(cursor.moveToFirst()) {
             do {
-                list.add(cursor.getString(0));
+                list.add(cursor.getInt(0));
             } while (cursor.moveToNext());
         }
         if (cursor != null && !cursor.isClosed()) {
@@ -114,6 +120,17 @@ public class MySQLite {
         return list;
     }
 
+    /*Delestes*/
+    public void DeleteByName(String name){
+        this.db.delete(TABLE_NAME,"name="+"'"+name+"'",null);
+    }
+    public void DeleteByDate(String date){
+        this.db.delete(TABLE_NAME,"date="+"'"+date+"'",null);
+    }
+    public void DeleteByTime(String time){
+        this.db.delete(TABLE_NAME,"date="+"'"+time+"'",null);
+    }
+
     private static class OpenHelper extends SQLiteOpenHelper {
 
         OpenHelper(Context context) {
@@ -123,7 +140,7 @@ public class MySQLite {
         @Override
         public void onCreate(SQLiteDatabase db) {
             // TODO Auto-generated method stub
-            db.execSQL("CREATE TABLE " + TABLE_NAME + "(id INTEGER PRIMARY KEY,name TEXT, date TEXT, time TEXT)");
+            db.execSQL("CREATE TABLE " + TABLE_NAME + "(id INTEGER PRIMARY KEY,name TEXT, date TEXT, time INTEGER)");
         }
 
         @Override

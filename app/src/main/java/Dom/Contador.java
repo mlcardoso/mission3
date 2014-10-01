@@ -20,11 +20,75 @@ public class Contador {
 
     long TempoCorrido = 0;
     boolean paused = false;
+    boolean isStartedReverso = false;
 
     Chronometer cr ;
 
+    CountDownTimer cT =  new CountDownTimer(TempoCorrido*1000, 1000) {
+
+        public void onTick(long millisUntilFinished) {
+
+
+            int hora = (int) millisUntilFinished / 3600000;
+            int min = ((int) millisUntilFinished / 60000) - hora * 60;
+            int seg = (int) ((millisUntilFinished % 60000) / 1000);
+
+            cr.setText(String.format("%02d", hora) + ":" + String.format("%02d", min) + ":" + String.format("%02d", seg));
+        }
+
+        public void onFinish() {
+            cr.setText("done!");
+        }
+    };
+
     public Contador(Chronometer cr) {
+
         this.cr = cr;
+    }
+
+
+
+    public void IniciaContadorReverso(int Segundos){
+
+        if(isStartedReverso) {
+            cT.onFinish();
+            cT = new CountDownTimer(Segundos * 1000, 1000) {
+
+                public void onTick(long millisUntilFinished) {
+
+
+                    int hora = (int) millisUntilFinished / 3600000;
+                    int min = ((int) millisUntilFinished / 60000) - hora * 60;
+                    int seg = (int) ((millisUntilFinished % 60000) / 1000);
+
+                    cr.setText(String.format("%02d", hora) + ":" + String.format("%02d", min) + ":" + String.format("%02d", seg));
+                }
+
+                public void onFinish() {
+                    cr.setText("done!");
+                }
+            };
+
+
+        }else {
+            cT = new CountDownTimer(Segundos * 1000, 1000) {
+
+                public void onTick(long millisUntilFinished) {
+
+
+                    int hora = (int) millisUntilFinished / 3600000;
+                    int min = ((int) millisUntilFinished / 60000) - hora * 60;
+                    int seg = (int) ((millisUntilFinished % 60000) / 1000);
+
+                    cr.setText(String.format("%02d", hora) + ":" + String.format("%02d", min) + ":" + String.format("%02d", seg));
+                }
+
+                public void onFinish() {
+                    cr.setText("done!");
+                }
+            };
+        }
+        cT.start();
     }
 
     public  android.widget.Chronometer.OnChronometerTickListener CronometroListener = new Chronometer.OnChronometerTickListener() {
@@ -66,10 +130,26 @@ public class Contador {
 
     public  void PausarContador() {
 
+        if(!(cr.isActivated())) {
+
+            TempoCorrido = cr.getBase() - SystemClock.elapsedRealtime();
+            paused = true;
+            cr.stop();
+        }
+
+    }
+    public  void PausarContadorReverso() {
+
         TempoCorrido = cr.getBase() - SystemClock.elapsedRealtime();
         paused = true;
-        cr.stop();
+        cT.cancel();
+        isStartedReverso = false;
 
+    }
+
+    public int TempoTotalReverso() {
+        TempoCorrido = cr.getBase() - SystemClock.elapsedRealtime();
+        return (int)((TempoCorrido*-1)/1000);
     }
 
     public int TempoTotal() {

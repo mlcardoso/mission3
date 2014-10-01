@@ -12,8 +12,8 @@ public class Atividade {
 
 
     String Nome;
-    ArrayList<Integer> Tempos = new ArrayList<Integer>();
-    ArrayList<String> Datas = new ArrayList<String>();
+    public ArrayList<Integer> Tempos = new ArrayList<Integer>();
+    public ArrayList<String> Datas = new ArrayList<String>();
     ArrayList<String> TemposeDatas = new ArrayList<String>();
 
 
@@ -64,8 +64,6 @@ public class Atividade {
     }
     public ArrayList<String> getTempoeDatas(){ return TemposeDatas;
     }
-
-
-
-
 }
+
+

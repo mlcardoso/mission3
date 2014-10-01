@@ -14,6 +14,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.DataSetObserver;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
@@ -26,6 +28,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -34,22 +37,24 @@ import android.widget.Toast;
 
 import com.melnykov.fab.FloatingActionButton;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
 import Dom.Atividade;
 import Dom.Atividades;
+import Dom.Item;
 import Dom.MySQLite;
 
 
 public class Inicial extends Activity {
 
-    /**
-     * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
-     */
 
+    MySQLite db;
 
-    ArrayAdapter<Atividade> ad;
+    ArrayAdapter<String> ad;
+
+    ArrayList<String> NomeDasAtividades = new ArrayList<String>();
 
     Atividades lAtividades = new Atividades();
 
@@ -59,6 +64,10 @@ public class Inicial extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tela_principal);
 
+        db = new MySQLite(this);
+        ActionBar ab = getActionBar();
+        ab.setBackgroundDrawable(new ColorDrawable(Color.LTGRAY));
+
         FloatingActionButton floatingActionButton = (FloatingActionButton) findViewById(R.id.button_floating_action);
         floatingActionButton.attachToListView(((ListView)findViewById(R.id.lstAtividades)));
 
@@ -67,11 +76,12 @@ public class Inicial extends Activity {
         ((ListView)findViewById(R.id.lstAtividades)).setOnItemLongClickListener(FuncaoItemLongLista);
         ((ListView)findViewById(R.id.lstAtividades)).setOnItemClickListener(FuncaoItemLista);
 
-        ad = new ArrayAdapter<Atividade>(this,android.R.layout.simple_list_item_1,lAtividades.getListaAtividade());
+        NomeDasAtividades.addAll(db.selectAllNames());
+
+        ad = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,NomeDasAtividades);
         ((ListView)findViewById(R.id.lstAtividades)).setAdapter(ad);
 
-     //   GeraDadosTeste();
-        CarregaListView();
+
 
   }
 
@@ -83,7 +93,6 @@ public class Inicial extends Activity {
             case R.id.button_floating_action:
                 Dialog();
                 break;
-
         }
 
         }
@@ -94,20 +103,15 @@ public class Inicial extends Activity {
         public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
 
             Object Obj = ((ListView) findViewById(R.id.lstAtividades)).getItemAtPosition(position);
-            Atividade a = (Atividade) Obj;
-            String Name = a.getNome();
+            String a = (String) Obj;
+            String Name = a.toString();
 
             Intent NovosTempos = new Intent(Inicial.this, TemposAtividade.class);
 
             NovosTempos.putExtra("Nome", Name);
 
-            NovosTempos.putIntegerArrayListExtra("Tempos", lAtividades.getAtividadeForId(position).getListaTempos());
-            NovosTempos.putStringArrayListExtra("Datas", lAtividades.getAtividadeForId(position).getListaDatas());
-
-
             setResult(1, NovosTempos);
             startActivityForResult(NovosTempos, 1);
-
         }
     };
 
@@ -117,10 +121,10 @@ public class Inicial extends Activity {
 
 
             Object Obj = ((ListView)findViewById(R.id.lstAtividades)).getItemAtPosition(position);
-            Atividade a = (Atividade)Obj;
-            String Name = a.getNome();
+            String a = (String)Obj;
+            String Name = a.toString();
 
-            DialogExcluir(Name);
+            DialogExcluir(Name,position);
 
 
             return true;
@@ -145,8 +149,9 @@ public class Inicial extends Activity {
                     public void onClick(DialogInterface dialog, int which) {
                         // Write your code here to execute after dialog
 
-                        lAtividades.insereAtividade(nome.getText().toString());
-                    }
+                        db.insert(nome.getText().toString(), null, null);
+                        NomeDasAtividades.add(nome.getText().toString());
+                   }
                 });
 
 
@@ -160,7 +165,25 @@ public class Inicial extends Activity {
         alertDialog.show();
     }
 
-    public void DialogExcluir(String Nome){
+    ArrayList<Integer> TemposTotaisDasAtividades(){
+
+        ArrayList<Integer> tempos = new ArrayList<Integer>();
+
+        for(int i = 0; i<NomeDasAtividades.size(); i++){
+            ArrayList<Integer> tAtividade = new ArrayList<Integer>();
+            tAtividade.addAll(db.SelectAllTime(NomeDasAtividades.get(i).toString()));
+            int tempo = 0;
+            for(int j = 0; j<tAtividade.size();j++)
+                tempo+=tAtividade.get(j);
+
+            tempos.add(tempo);
+        }
+
+        return tempos;
+    }
+
+
+    public void DialogExcluir(final String Nome, final int position){
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(Inicial.this);
 
         alertDialog.setTitle("Deseja Excluir?");
@@ -177,7 +200,9 @@ public class Inicial extends Activity {
                     public void onClick(DialogInterface dialog, int which) {
                         // Write your code here to execute after dialog
 
-                //        insereNovaAtividade(nome.getText().toString());
+                        db.DeleteByName(Nome);
+                       NomeDasAtividades.remove(position);
+                       CarregaListView();
                     }
                 });
 
@@ -186,7 +211,7 @@ public class Inicial extends Activity {
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         // Write your code here to execute after dialog
-                   //     dialog.cancel();
+                        dialog.cancel();
 
                     }
                 });
@@ -197,12 +222,10 @@ public class Inicial extends Activity {
 
     private void insereNovaAtividade(String nome){
 
-       lAtividades.insereAtividade(nome);
         ad.notifyDataSetChanged();
     }
 
     void CarregaListView(){
-
         ad.notifyDataSetChanged();
     }
 
@@ -221,22 +244,32 @@ public class Inicial extends Activity {
         }
     }
 
-    /*----------------------------------------------------------*/
-
-    public void GeraDadosTeste(){
-        lAtividades.insereAtividade("Circuitos Eletricos");
-        lAtividades.getAtividadeForId(0).insereTempo(300,"20/01/1992");
-        lAtividades.getAtividadeForId(0).insereTempo(200,"20/01/1993");
-        lAtividades.getAtividadeForId(0).insereTempo(100,"20/01/1994");
-        lAtividades.getAtividadeForId(0).insereTempo(400,"20/01/1995");
-        lAtividades.getAtividadeForId(0).insereTempo(20,"20/01/1996");
-
-        lAtividades.insereAtividade("Academia");
-        lAtividades.getAtividadeForId(1).insereTempo(300,"20/02/1992");
-        lAtividades.getAtividadeForId(1).insereTempo(200,"20/03/1993");
-        lAtividades.getAtividadeForId(1).insereTempo(100,"20/04/1994");
-        lAtividades.getAtividadeForId(1).insereTempo(400,"20/05/1995");
-        lAtividades.getAtividadeForId(1).insereTempo(20,"20/06/1996");
-
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.inicial, menu);
+        return true;
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            return true;
+        }if(id == R.id.btGrafic){
+
+            Intent i = new Intent(Inicial.this,Grafico.class);
+
+            i.putStringArrayListExtra("Nomes",NomeDasAtividades);
+            i.putIntegerArrayListExtra("Tempos",TemposTotaisDasAtividades());
+
+            startActivity(i);
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }

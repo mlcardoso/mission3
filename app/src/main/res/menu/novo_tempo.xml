@@ -5,8 +5,8 @@
         android:title="Ocultar"
         android:showAsAction="withText|ifRoom"
         />
-    <item android:id="@+id/action_settings"
-        android:title="@string/action_settings"
-        android:orderInCategory="100"
-        android:showAsAction="never" />
+    <item android:id="@+id/btReverso"
+        android:title="Reverso"
+        android:showAsAction="withText|ifRoom"
+        />
 </menu>

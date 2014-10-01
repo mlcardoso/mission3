@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="309dp"
             android:id="@+id/chronometer"
-            android:layout_gravity="center_horizontal|bottom"
+            android:layout_gravity="center"
             android:text="00:00:00" />
     </FrameLayout>
 </RelativeLayout>
