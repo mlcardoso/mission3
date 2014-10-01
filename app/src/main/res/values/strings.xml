@@ -2,9 +2,12 @@
 <resources>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     <string name="app_name">Atividades</string>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
     <string name="app_name">Tasker</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -13,6 +16,9 @@
     <string name="title_activity_novo_tempo">NovoTempo</string>
 =======
     <string name="app_name">Taskers</string>
+<<<<<<< HEAD
+>>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
+=======
 >>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
     <string name="title_section1">Section 1</string>
     <string name="title_section2">Section 2</string>
@@ -22,10 +28,16 @@
     <string name="action_example">Example action</string>
     <string name="action_settings">Settings</string>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <string name="title_activity_tempos_atividade">TemposAtividade</string>
     <string name="title_activity_novo_tempo">NovoTempo</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_grafico">Grafico</string>
+=======
+    <string name="title_activity_atividades">Atividades</string>
+    <string name="hello_world">Hello world!</string>
+>>>>>>> 82e807bd8957266324de93b2507b099c320d7fbc
+>>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
 =======
     <string name="title_activity_atividades">Atividades</string>
     <string name="hello_world">Hello world!</string>

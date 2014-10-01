@@ -2,7 +2,12 @@
 include ':app'
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
 include ':app'
+=======
+include ':app', ':app2'
+>>>>>>> 82e807bd8957266324de93b2507b099c320d7fbc
+>>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
 =======
 include ':app', ':app2'
 >>>>>>> 82e807bd8957266324de93b2507b099c320d7fbc

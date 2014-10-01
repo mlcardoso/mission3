@@ -1,6 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
 <<<<<<< HEAD
+<<<<<<< HEAD
     tools:context="com.fnordz.atividades.NovoTempo" >
     <item android:id="@+id/btOcultar"
         android:title="Ocultar"
@@ -11,10 +12,15 @@
         android:showAsAction="withText|ifRoom"
         />
 =======
+=======
+>>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
     tools:context="com.example.marcoscardoso.tasker.NovoTempo" >
     <item android:id="@+id/action_settings"
         android:title="@string/action_settings"
         android:orderInCategory="100"
         android:showAsAction="never" />
+<<<<<<< HEAD
+>>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
+=======
 >>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
 </menu>

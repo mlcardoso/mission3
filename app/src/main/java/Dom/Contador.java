@@ -2,6 +2,7 @@ package Dom;
 
 import android.app.Activity;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -161,6 +162,8 @@ public class Contador {
 
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
 import android.os.CountDownTimer;
 import android.widget.TextView;
 
@@ -259,4 +262,7 @@ public class Contador extends Activity {
     }
 >>>>>>> 82e807bd8957266324de93b2507b099c320d7fbc
 }
+<<<<<<< HEAD
+>>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
+=======
 >>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9

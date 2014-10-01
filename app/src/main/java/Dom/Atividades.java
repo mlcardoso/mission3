@@ -1,8 +1,11 @@
 package Dom;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import android.util.DisplayMetrics;
 
+=======
+>>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
 =======
 >>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
 import java.util.ArrayList;
@@ -13,6 +16,7 @@ import java.util.List;
  */
 public class Atividades {
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     public ArrayList<Atividade> ListaAtividade = new ArrayList<Atividade>();
     private ArrayList<String> NomeMaisTempo = new ArrayList<String>();
@@ -97,6 +101,8 @@ public class Atividades {
     }
 }
 =======
+=======
+>>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
     private  ArrayList<Atividade>  ListaAtividade = new ArrayList<Atividade>();
 
 
@@ -122,4 +128,7 @@ public class Atividades {
        return ListaAtividade.size();
    }
 }
+<<<<<<< HEAD
+>>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
+=======
 >>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9

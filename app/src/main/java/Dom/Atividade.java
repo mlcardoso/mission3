@@ -1,9 +1,12 @@
 package Dom;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+=======
+>>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
 =======
 >>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
 import java.util.ArrayList;
@@ -15,6 +18,7 @@ public class Atividade {
 
 
     String Nome;
+<<<<<<< HEAD
 <<<<<<< HEAD
     public ArrayList<Integer> Tempos = new ArrayList<Integer>();
     public ArrayList<String> Datas = new ArrayList<String>();
@@ -47,6 +51,8 @@ public class Atividade {
             TemposeDatas.add(datas.get(i -tam) + "           -             " + Contador.montaTempo(tempos.get(i - tam)));
         }
 =======
+=======
+>>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
     ArrayList<Integer> Tempos = new ArrayList<Integer>();
 
     public Atividade(String nome, Integer tempo) {
@@ -56,6 +62,9 @@ public class Atividade {
 
     public void insereTempo(int t){
         Tempos.add(t);
+<<<<<<< HEAD
+>>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
+=======
 >>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
     }
 
@@ -64,7 +73,10 @@ public class Atividade {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
     public int UltimoTempo(){
         return Tempos.get(Tempos.size()-1);
     }
@@ -72,6 +84,9 @@ public class Atividade {
         return Tempos;
     }
 
+<<<<<<< HEAD
+>>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
+=======
 >>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
     public int getTempoTotal(){
 
@@ -81,6 +96,7 @@ public class Atividade {
         }
         return tempototal;
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
     public ArrayList<Integer> getListaTempos(){
         return Tempos;
@@ -93,6 +109,9 @@ public class Atividade {
 }
 
 
+=======
+}
+>>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
 =======
 }
 >>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9

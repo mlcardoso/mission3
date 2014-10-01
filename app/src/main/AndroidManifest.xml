@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 <<<<<<< HEAD
+<<<<<<< HEAD
     package="com.fnordz.atividades" >
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
     package="com.example.marcoscardoso.tasker" >
 =======
     package="com.example.ipbfiladelfia.taskers" >
 >>>>>>> 82e807bd8957266324de93b2507b099c320d7fbc
+<<<<<<< HEAD
+>>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
+=======
 >>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
 
     <application
@@ -17,17 +23,23 @@
         android:theme="@style/AppTheme" >
         <activity
 <<<<<<< HEAD
+<<<<<<< HEAD
             android:name=".Inicial"
             android:configChanges="orientation"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
             android:name=".MyActivity"
 =======
             android:name=".Taskers"
 >>>>>>> 82e807bd8957266324de93b2507b099c320d7fbc
             android:label="@string/app_name" >
+<<<<<<< HEAD
+>>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
+=======
 >>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,6 +48,7 @@
             </intent-filter>
         </activity>
         <activity
+<<<<<<< HEAD
 <<<<<<< HEAD
             android:name=".TemposAtividade"
             android:configChanges="orientation"
@@ -55,6 +68,8 @@
 
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
             android:name=".tela_MinhasAtividades"
             android:label="@string/title_activity_tela__minhas_atividades" >
         </activity>
@@ -70,6 +85,9 @@
             android:label="@string/title_activity_atividades" >
 >>>>>>> 82e807bd8957266324de93b2507b099c320d7fbc
         </activity>
+<<<<<<< HEAD
+>>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
+=======
 >>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
     </application>
 
