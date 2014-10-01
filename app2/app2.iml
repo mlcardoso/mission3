@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<module external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$/.." external.system.id="GRADLE" external.system.module.group="Atividades" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
-=======
-<<<<<<< HEAD
-<module external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$/.." external.system.id="GRADLE" external.system.module.group="Tasker2" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
-=======
 <module external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$/.." external.system.id="GRADLE" external.system.module.group="Taskers2" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
->>>>>>> 82e807bd8957266324de93b2507b099c320d7fbc
->>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
   <component name="FacetManager">
     <facet type="android-gradle" name="Android-Gradle">
       <configuration>
-        <option name="GRADLE_PROJECT_PATH" value=":app" />
+        <option name="GRADLE_PROJECT_PATH" value=":app2" />
       </configuration>
     </facet>
     <facet type="android" name="Android">
@@ -85,22 +77,11 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/symbols" />
       <excludeFolder url="file://$MODULE_DIR$/build/outputs" />
     </content>
-<<<<<<< HEAD
-    <orderEntry type="jdk" jdkName="Android API 15 Platform" jdkType="Android SDK" />
-    <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="support-v4-20.0.0" level="project" />
-    <orderEntry type="library" exported="" name="floatingactionbutton-1.0.3" level="project" />
-    <orderEntry type="library" exported="" name="support-annotations-20.0.0" level="project" />
-=======
     <orderEntry type="jdk" jdkName="Android API 20 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-<<<<<<< HEAD
-=======
-    <orderEntry type="library" exported="" name="support-v4-20.0.0" level="project" />
     <orderEntry type="library" exported="" name="support-v13-20.0.0" level="project" />
+    <orderEntry type="library" exported="" name="support-v4-20.0.0" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-20.0.0" level="project" />
->>>>>>> 82e807bd8957266324de93b2507b099c320d7fbc
->>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
   </component>
 </module>
 

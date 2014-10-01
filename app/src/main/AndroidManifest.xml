@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
     package="com.fnordz.atividades" >
+=======
+<<<<<<< HEAD
+    package="com.example.marcoscardoso.tasker" >
+=======
+    package="com.example.ipbfiladelfia.taskers" >
+>>>>>>> 82e807bd8957266324de93b2507b099c320d7fbc
+>>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
 
     <application
         android:allowBackup="true"
@@ -8,10 +16,19 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
+<<<<<<< HEAD
             android:name=".Inicial"
             android:configChanges="orientation"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
+=======
+<<<<<<< HEAD
+            android:name=".MyActivity"
+=======
+            android:name=".Taskers"
+>>>>>>> 82e807bd8957266324de93b2507b099c320d7fbc
+            android:label="@string/app_name" >
+>>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,6 +36,7 @@
             </intent-filter>
         </activity>
         <activity
+<<<<<<< HEAD
             android:name=".TemposAtividade"
             android:configChanges="orientation"
             android:label="@string/title_activity_tempos_atividade"
@@ -35,6 +53,24 @@
             android:label="@string/title_activity_grafico" >
         </activity>
 
+=======
+<<<<<<< HEAD
+            android:name=".tela_MinhasAtividades"
+            android:label="@string/title_activity_tela__minhas_atividades" >
+        </activity>
+        <activity
+            android:name=".Atividade"
+            android:label="@string/title_activity_atividade" >
+        </activity>
+        <activity
+            android:name=".NovoTempo"
+            android:label="@string/title_activity_novo_tempo" >
+=======
+            android:name=".Atividades"
+            android:label="@string/title_activity_atividades" >
+>>>>>>> 82e807bd8957266324de93b2507b099c320d7fbc
+        </activity>
+>>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
     </application>
 
 </manifest>

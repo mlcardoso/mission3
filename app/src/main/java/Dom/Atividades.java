@@ -1,7 +1,10 @@
 package Dom;
 
+<<<<<<< HEAD
 import android.util.DisplayMetrics;
 
+=======
+>>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +13,7 @@ import java.util.List;
  */
 public class Atividades {
 
+<<<<<<< HEAD
     public ArrayList<Atividade> ListaAtividade = new ArrayList<Atividade>();
     private ArrayList<String> NomeMaisTempo = new ArrayList<String>();
 
@@ -92,3 +96,30 @@ public class Atividades {
         return NomeMaisTempo;
     }
 }
+=======
+    private  ArrayList<Atividade>  ListaAtividade = new ArrayList<Atividade>();
+
+
+
+   public void insereAividades(String nome, Integer tempo){
+        int i;
+       for( i = 0; i < ListaAtividade.size() ; i++){
+           if(ListaAtividade.get(i).getNome().equals(nome)){
+              ListaAtividade.get(i).insereTempo(tempo);
+              break;
+           }
+       }
+       if(i == ListaAtividade.size()){
+           Atividade a = new Atividade(nome,tempo);
+           ListaAtividade.add(a);
+       }
+   }
+
+    public Atividade getAtividadeForId(int i){
+        return ListaAtividade.get(i);
+    }
+   public int getListaAtividadeSize(){
+       return ListaAtividade.size();
+   }
+}
+>>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9

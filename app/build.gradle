@@ -1,10 +1,24 @@
 apply plugin: 'com.android.application'
+<<<<<<< HEAD
 android {
     compileSdkVersion 15
     buildToolsVersion "20.0.0"
 
     defaultConfig {
         applicationId "com.fnordz.atividades"
+=======
+
+android {
+    compileSdkVersion 20
+    buildToolsVersion "20.0.0"
+
+    defaultConfig {
+<<<<<<< HEAD
+        applicationId "com.example.marcoscardoso.tasker"
+=======
+        applicationId "com.example.ipbfiladelfia.taskers"
+>>>>>>> 82e807bd8957266324de93b2507b099c320d7fbc
+>>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
         minSdkVersion 15
         targetSdkVersion 20
         versionCode 1
@@ -17,6 +31,7 @@ android {
         }
     }
 }
+<<<<<<< HEAD
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:support-v4:20.0.0'
@@ -26,3 +41,14 @@ dependencies {
 repositories {
     maven { url 'Dom.FloatingActionButton' }
 }
+=======
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+<<<<<<< HEAD
+=======
+    compile 'com.android.support:support-v4:20.0.0'
+    compile 'com.android.support:support-v13:20.0.0'
+>>>>>>> 82e807bd8957266324de93b2507b099c320d7fbc
+}
+>>>>>>> a34e1c565e1c11b78a9f9918f9ecfb4ce2f35cb9
